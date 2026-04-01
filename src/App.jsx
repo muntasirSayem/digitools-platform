@@ -7,6 +7,7 @@ import Banner from "./components/Banner";
 import Stats from "./components/Stats";
 import Steps from "./components/Steps";
 import Pricing from "./components/Pricing";
+import Workflow from "./components/Workflow";
 
 const getProducts = async () => {
   const res = await fetch("/products.json");
@@ -75,6 +76,7 @@ function App() {
 
       <Steps></Steps>
       <Pricing></Pricing>
+      <Workflow></Workflow>
 
       <ToastContainer></ToastContainer>
     </>
