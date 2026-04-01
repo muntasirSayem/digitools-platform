@@ -2,6 +2,7 @@ import { useState } from "react";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 import { ToastContainer } from "react-toastify";
+import Navbar from "./components/Navbar";
 
 const getProducts = async () => {
   const res = await fetch("/products.json");
@@ -16,10 +17,13 @@ function App() {
 
   return (
     <>
+      <Navbar carts={carts} />
 
       <div className="py-30 px-6 lg:px-0">
         <div className="text-center space-y-4 pb-4">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#101727]">Premium Digital Tools</h2>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#101727]">
+            Premium Digital Tools
+          </h2>
           <p className="text-[#627382] text-[1rem] leading-5">
             Choose from our curated collection of premium digital products
             designed to boost your productivity and creativity.
@@ -52,15 +56,15 @@ function App() {
             </button>
           </div>
         </div>
-      {activeTab === "product" && (
-        <Products
-          productPromise={productPromise}
-          carts={carts}
-          setCarts={setCarts}
-        />
-      )}
+        {activeTab === "product" && (
+          <Products
+            productPromise={productPromise}
+            carts={carts}
+            setCarts={setCarts}
+          />
+        )}
 
-      {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts} />}
+        {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts} />}
       </div>
 
       <ToastContainer></ToastContainer>
