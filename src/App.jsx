@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Stats from "./components/Stats";
 import Steps from "./components/Steps";
+import Pricing from "./components/Pricing";
 
 const getProducts = async () => {
   const res = await fetch("/products.json");
@@ -73,6 +74,7 @@ function App() {
       </div>
 
       <Steps></Steps>
+      <Pricing></Pricing>
 
       <ToastContainer></ToastContainer>
     </>
