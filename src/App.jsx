@@ -4,6 +4,7 @@ import Cart from "./components/Cart";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
+import Stats from "./components/Stats";
 
 const getProducts = async () => {
   const res = await fetch("/products.json");
@@ -20,6 +21,7 @@ function App() {
     <>
       <Navbar carts={carts} />
       <Banner></Banner>
+      <Stats></Stats>
 
       <div className="py-30 px-6 lg:px-0">
         <div className="text-center space-y-4 pb-4">
