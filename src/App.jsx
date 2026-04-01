@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Stats from "./components/Stats";
+import Steps from "./components/Steps";
 
 const getProducts = async () => {
   const res = await fetch("/products.json");
@@ -70,6 +71,8 @@ function App() {
 
         {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts} />}
       </div>
+
+      <Steps></Steps>
 
       <ToastContainer></ToastContainer>
     </>
